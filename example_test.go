@@ -5,10 +5,10 @@ import (
 	"io"
 	"log"
 
+	"github.com/chamatht/go-pgpmail"
 	"github.com/emersion/go-message"
 	"github.com/emersion/go-message/mail"
-	"github.com/emersion/go-pgpmail"
-	"golang.org/x/crypto/openpgp"
+	"github.com/keybase/go-crypto/openpgp"
 )
 
 func ExampleRead() {

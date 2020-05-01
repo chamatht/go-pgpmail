@@ -11,10 +11,10 @@ import (
 	"strings"
 
 	"github.com/emersion/go-message/textproto"
-	"golang.org/x/crypto/openpgp"
-	"golang.org/x/crypto/openpgp/armor"
-	pgperrors "golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/packet"
+	"github.com/keybase/go-crypto/openpgp"
+	"github.com/keybase/go-crypto/openpgp/armor"
+	pgperrors "github.com/keybase/go-crypto/openpgp/errors"
+	"github.com/keybase/go-crypto/openpgp/packet"
 )
 
 type Reader struct {
@@ -211,7 +211,7 @@ func (r *signedReader) check() error {
 			return fmt.Errorf("pgpmail: micalg mismatch: multipart header indicates %v but signature packet indicates %v", r.hashFunc, hashFunc)
 		}
 
-		keys = r.keyring.KeysByIdUsage(issuerKeyId, packet.KeyFlagSign)
+		keys = r.keyring.KeysByIdUsage(issuerKeyId, nil, packet.KeyFlagSign)
 		if len(keys) == 0 {
 			continue
 		}

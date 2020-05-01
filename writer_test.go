@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/emersion/go-message/textproto"
-	"golang.org/x/crypto/openpgp"
+	"github.com/keybase/go-crypto/openpgp"
 )
 
 func init() {
@@ -46,6 +46,7 @@ BIC6gLJy2TZjt6SlOUbWEqGJ8iwKgvc8kWQs4w5xFP1p0OSR4yg359+1q8p27mFv
 kx/p4lCUZ43hdjMA
 =EZSF
 -----END PGP MESSAGE-----
+
 --foo--
 `)
 
